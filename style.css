@@ -1,0 +1,228 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* Soft gradient background */
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Search Bar Styles */
+input[type="text"] {
+    padding: 12px;
+    width: 300px;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+    border-color: #9b59b6;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Button Styles */
+button {
+    padding: 12px 30px;
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #8e44ad;
+    transform: scale(1.05);
+}
+
+/* Popular Books Section */
+#popular-books-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+    scroll-behavior: smooth;
+}
+
+
+#popular-books h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3498db;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Book List Styles */
+#book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.book-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.book-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.book-item img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.book-item img:hover {
+    transform: scale(1.05);
+}
+
+.book-item h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+}
+
+.book-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.book-item a {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-item a:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Hover Effects on Books */
+.book-item:hover h3 {
+    color: #9b59b6;
+}
+
+.book-item:hover p {
+    color: #34495e;
+}
+
+.book-item:hover a {
+    background-color: #8e44ad;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    input[type="text"] {
+        width: 85%;
+    }
+
+    button {
+        width: 85%;
+    }
+
+    #book-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #book-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for Header */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
