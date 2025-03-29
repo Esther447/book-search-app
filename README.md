@@ -4,7 +4,7 @@ My application's domain name, getcryptoappcoder.tech, was supposed to be valid f
 📌 Evidence
 (Show the screenshot of the expired domain page)
 "As you can see, the domain is no longer accessible, and instead, I am seeing a message stating that the domain has expired
-![Book Search App Screenshot](./images/Screenshot%202025-03-29%20094715.png)
+![Book Search App Screenshot](./images/Screenshot%202025-03-29%20120812.png)
 
 
 Explanations of the deployment process, load balancer setup, and the domain name issue.
