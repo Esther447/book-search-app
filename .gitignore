@@ -1,0 +1,21 @@
+# Node.js / JavaScript specific
+node_modules/
+npm-debug.log
+.env
+
+# IDE files (for VSCode, IntelliJ, etc.)
+.vscode/
+.idea/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment variables file (for secrets)
+.env
+
