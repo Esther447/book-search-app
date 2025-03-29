@@ -1,3 +1,12 @@
+Before I dive into the demo of my application, I want to highlight an unexpected issue I encountered while preparing for this presentation.
+📌 Problem Statement
+My application's domain name, getcryptoappcoder.tech, was supposed to be valid for one year for free. However, without a full year passing, the domain unexpectedly expired. Now, when I try to access it, instead of my application, I see a domain expiration notice.
+📌 Evidence
+(Show the screenshot of the expired domain page)
+"As you can see, the domain is no longer accessible, and instead, I am seeing a message stating that the domain has expired
+![Book Search App Screenshot](./images/Screenshot%202025-03-29%20094715.png)
+
+
 Explanations of the deployment process, load balancer setup, and the domain name issue.
 
 markdown
@@ -44,3 +53,4 @@ Configured a custom domain to point to the load balancer.
 Issues Faced
 Domain Name Expiration Issue
 Despite purchasing the domain name for one year, it unexpectedly expired before the period elapsed. This caused downtime and access issues, requiring further troubleshooting with the domain provider. The team is actively working to resolve this issue and restore full functionality.
+![Book Search App Screenshot](./images/Screenshot%202025-03-29%20094715.png)
