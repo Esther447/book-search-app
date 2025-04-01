@@ -1,58 +1,142 @@
-Before I dive into the demo of my application, I want to highlight an unexpected issue I encountered while preparing for this presentation.
-📌 Problem Statement
-My application's domain name, getcryptoappcoder.tech, was supposed to be valid for one year for free. However, without a full year passing, the domain unexpectedly expired. Now, when I try to access it, instead of my application, I see a domain expiration notice.
-📌 Evidence
-(Show the screenshot of the expired domain page)
-"As you can see, the domain is no longer accessible, and instead, I am seeing a message stating that the domain has expired
-![Screenshot of the Book Search App](./images/Screenshot%202025-03-29%20094715.png)
+Book Search App
+
+Overview
+
+Book Search App is a web application designed to make it easier for users to search for books online, providing access to a vast library of books through the Open Library API. Users can search for books by title, author, or ISBN and get details such as availability for online reading, author information, and more.
+
+Features
+
+Search for books by title, author, or ISBN.
+
+View book details including cover, author, and availability.
+
+Some books have access to read online, while others do not.
+
+Simple and user-friendly interface.
+
+Technologies Used
+
+Frontend: HTML, CSS, JavaScript
+
+Backend: JavaScript (No Node.js, purely frontend-based API integration)
+
+API: Open Library API
+
+How to Use the Book Search App 📚
+Visit the Website
+
+Open a web browser and go to [your app’s domain] (e.g., https://yourdomain.com).
+
+Search for a Book
+
+On the homepage, you’ll find a search bar.
+
+Type the name of a book, author, or keyword and press Enter or click the Search button.
+
+View Search Results
+
+A list of books related to your search will appear.
+
+Each book will display its title, author, cover image, and availability.
+
+Check Book Details
+
+Click on a book to view more details like its description, published year, and availability.
+
+If the book has an online reading option, a "Read Online" button will be available.
+
+Read Online (if available)
+
+If a book supports online reading, click the "Read Online" button.
+
+The app will redirect you to Open Library’s reader to access the book.
+
+Explore More Books
+
+Use the search bar again to find more books.
+
+Enjoy Your Reading! 📖✨
 
 
-Explanations of the deployment process, load balancer setup, and the domain name issue.
 
-markdown
-Copy
-Edit
-# Book Search App
+Deployment: Nginx on Ubuntu servers (web01, web02, lb01)
 
-## Introduction  
-The **Book Search App** is a web application that allows users to search for books, view details, and explore various book-related information. It utilizes an external API to fetch book data and presents it in an intuitive and user-friendly interface.  
+How to Run the Application Locally
 
-## Features  
-- **Search Functionality** – Users can search for books by title, author, or keyword.  
-- **Book Details Page** – Clicking on a book displays detailed information, including author, description, and publication date.  
-- **API Integration** – Fetches book data from an external API.  
-- **Deployment on Vercel** – Hosted on [Vercel](https://vercel.com) for seamless access.  
-- **Load Balancing** – Configured for optimized performance and traffic management.  
+Clone the repository:
 
-## Deployment Process  
-This application was deployed using three key components:  
-1. **Web Servers (web01 and web02)** – Two separate instances for hosting the application.  
-2. **Load Balancer (lb01)** – Configured to distribute traffic evenly between `web01` and `web02`, ensuring reliability and better performance.  
-3. **Domain Name** – A custom domain was used for accessibility.  
+git clone https://github.com/Esther447/book-search-app.git
 
-### Steps Taken for Deployment:  
-1. **Cloned the Repository**  
-   ```bash
-   git clone https://github.com/Esther447/book-search-app.git
-Set Up the Web Servers
+Navigate to the project folder:
 
-Installed necessary dependencies.
+cd book-search-app
 
-Deployed the application on web01 and web02.
+Open index.html in your browser to start using the app.
 
-Configured the Load Balancer
+Deployment Instructions
 
-Set up lb01 to distribute incoming traffic between web01 and web02.
+The application is deployed on multiple Ubuntu servers using Nginx as a reverse proxy.
 
-Ensured failover protection to handle high traffic loads.
+Copy the application files to /var/www/html/ on each server:
 
-Domain Name Setup
+sudo cp -r book-search-app /var/www/html/
 
-Configured a custom domain to point to the load balancer.
+Set proper ownership and permissions:
 
-Issues Faced
-Domain Name Expiration Issue
-Despite purchasing the domain name for one year, it unexpectedly expired before the period elapsed. This caused downtime and access issues, requiring further troubleshooting with the domain provider. The team is actively working to resolve this issue and restore full functionality.
-![Book Search App Screenshot](./images/Screenshot%202025-03-29%20094715.png)
+sudo chown -R ubuntu:ubuntu /var/www/html/
 
-Youtube video link: https://youtu.be/CYBOTrAtiNM
+Configure Nginx: Edit /etc/nginx/sites-available/default and add the following:
+
+server {
+    listen 80;
+    server_name getcryptoappcoder.tech www.getcryptoappcoder.tech;
+
+    root /var/www/html/book-search-app;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+Restart Nginx to apply changes:
+
+sudo systemctl restart nginx
+
+Set up SSL using Let's Encrypt:
+
+sudo certbot --nginx -d getcryptoappcoder.tech -d www.getcryptoappcoder.tech
+
+Enable auto-renewal for SSL:
+
+sudo certbot renew --dry-run
+
+Challenges Faced
+
+API Limitations: Some books do not have an option to read online due to availability restrictions.
+
+Deployment Issues: Ensuring Nginx was correctly set up to serve static files and proxy requests.
+
+Security: Implementing SSL to make the site secure.
+
+Credits
+
+Open Library API for providing book data.
+
+Let's Encrypt for free SSL certificates.
+
+Nginx for handling web traffic efficiently.
+
+Future Improvements
+
+Implement user authentication to save favorite books.
+
+Enhance the UI with better search filters and categories.
+
+Improve mobile responsiveness for a better experience on small screens.
+
+Developed by Esther447
+
+Youtube Video:  https://youtu.be/-zYTmzcRNI4
+App link:  https://www.getcryptoappcoder.tech/
+
