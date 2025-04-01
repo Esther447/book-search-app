@@ -3,7 +3,7 @@ Book Search App
 Overview
 
 Book Search App is a web application designed to make it easier for users to search for books online, providing access to a vast library of books through the Open Library API. Users can search for books by title, author, or ISBN and get details such as availability for online reading, author information, and more.
-
+---------------------------------------------------------------------------------
 Features
 
 Search for books by title, author, or ISBN.
@@ -21,11 +21,11 @@ Frontend: HTML, CSS, JavaScript
 Backend: JavaScript (No Node.js, purely frontend-based API integration)
 
 API: Open Library API
-
+----------------------------------------------------------------------------------------
 How to Use the Book Search App 📚
 Visit the Website
 
-Open a web browser and go to [your app’s domain] (e.g., https://yourdomain.com).
+Open a web browser and go to [my app’s domain] (https://getcryptoappcoder.tech).
 
 Search for a Book
 
@@ -57,7 +57,7 @@ Use the search bar again to find more books.
 
 Enjoy Your Reading! 📖✨
 
-
+---------------------------------------------------------------------------------------------
 
 Deployment: Nginx on Ubuntu servers (web01, web02, lb01)
 
@@ -110,7 +110,7 @@ sudo certbot --nginx -d getcryptoappcoder.tech -d www.getcryptoappcoder.tech
 Enable auto-renewal for SSL:
 
 sudo certbot renew --dry-run
-
+--------------------------------------------------------------------------
 Challenges Faced
 
 API Limitations: Some books do not have an option to read online due to availability restrictions.
@@ -136,7 +136,7 @@ Enhance the UI with better search filters and categories.
 Improve mobile responsiveness for a better experience on small screens.
 
 Developed by Esther447
-
+--------------------------------------------------------------------------------------
 Youtube Video:  https://youtu.be/-zYTmzcRNI4
 App link:  https://www.getcryptoappcoder.tech/
 
