@@ -137,6 +137,7 @@ Improve mobile responsiveness for a better experience on small screens.
 
 Developed by Esther447
 --------------------------------------------------------------------------------------
-Youtube Video:  https://youtu.be/-zYTmzcRNI4
-App link:  https://www.getcryptoappcoder.tech/
+Vimeo video:    https://vimeo.com/1075209472?share=copy
+Youtube Video:    https://youtu.be/-zYTmzcRNI4
+App link:     https://www.getcryptoappcoder.tech/
 
