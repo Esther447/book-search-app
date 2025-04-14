@@ -1,20 +1,17 @@
-import fetch from 'node-fetch';  // Use import instead of require
-import express from 'express';
+import fetch from 'node-fetch';
 
-const app = express();
-const port = 5000;
+// Your server code logic here
+// Example: Fetch data from an API
+const API_URL = 'https://api.example.com/data';
 
-app.use(express.static('.'));
+fetch(API_URL)
+  .then(response => response.json())
+  .then(data => {
+    console.log('Fetched data:', data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 
-app.get('/search', async (req, res) => {
-    const query = req.query.q;
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-    const data = await response.json();
-    const books = data.items ? data.items.map(item => item.volumeInfo) : [];
-    res.json(books);
-});
-
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
+// Additional code for your server logic, e.g. creating an Express server
 

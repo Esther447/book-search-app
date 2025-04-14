@@ -1,0 +1,16 @@
+{
+  "name": "book-search-app",
+  "version": "1.0.0",
+  "description": "Before I dive into the demo of my application, I want to highlight an unexpected issue I encountered while preparing for this presentation. 📌 Problem Statement My application's domain name, getcryptoappcoder.tech, was supposed to be valid for one year for free. However, without a full year passing, the domain unexpectedly expired. Now, when I try to access it, instead of my application, I see a domain expiration notice. 📌 Evidence (Show the screenshot of the expired domain page) \"As you can see, the domain is no longer accessible, and instead, I am seeing a message stating that the domain has expired ![Screenshot of the Book Search App](./images/Screenshot%202025-03-29%20094715.png)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {}
+}
